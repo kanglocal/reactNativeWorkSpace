@@ -7,12 +7,14 @@
  */
 
 import React, { Component } from 'react';
-import { Button, View, Text, StyleSheet,ScrollView, TextInput } from 'react-native';
+import { Button, View, Text, StyleSheet,ScrollView, TextInput, Image } from 'react-native';
 import Header from './src/header';
 import Generator from './src/generator';
 import NumList from './src/numlist';
 import Input from './src/input';
 import Picker from './src/picker';
+import Dog from './assets/images/dog.jpg';
+import Modal from './src/modal';
 
 class App extends Component {
 
@@ -58,7 +60,14 @@ class App extends Component {
   render() {
     return (
       <View style={styles.mainView}>
-        <Picker/>
+        <Modal/>
+        {/* <Image
+          source={{uri: 'https://picsum.photos/id/237/400/300'}}
+          style={styles.image}
+          resizeMode="contain"
+          // onLoadEnd={()=>alert('Image Loaded!!!')}
+        /> */}
+        {/* <Picker/>
         <TextInput
           value={this.state.myTextInput}
           style={styles.input}
@@ -89,7 +98,7 @@ class App extends Component {
             ))
           }
 
-        </ScrollView>
+        </ScrollView> */}
       </View>
     )
   }
@@ -130,5 +139,10 @@ const styles = StyleSheet.create({
         fontSize: 25,
         padding: 10
     },
+  image:{
+    backgroundColor:'red',
+    width: '100%',
+    height: 1000
+  }
 })
 export default App;
